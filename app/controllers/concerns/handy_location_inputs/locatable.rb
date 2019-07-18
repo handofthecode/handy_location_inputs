@@ -1,5 +1,5 @@
 module HandyLocationInputs
-  module Locateable
+  module Locatable
     extend ActiveSupport::Concern
 
     private

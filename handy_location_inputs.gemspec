@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = HandyLocationInputs::VERSION
   spec.authors     = ["handofthecode"]
   spec.email       = ["deartovi@gmail.com"]
-  spec.homepage    = "TODO"
-  spec.summary     = "TODO: Summary of HandyLocationInputs."
-  spec.description = "TODO: Description of HandyLocationInputs."
+  spec.homepage    = "https://github.com/handofthecode/handy_location_inputs"
+  spec.summary     = "HandyLocationInputs auto suggests locations as the user types. It prevents them from continuing until a valid location is selected. Subordinate input possibilities are requested from the server via ajax as soon as approved locations are entered. Cases are fixed."
+  spec.description = "HandyLocationInputs is a great way to get uniform location input from a user without resorting to the use of unwieldly select boxes."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
