@@ -1,5 +1,5 @@
 document.addEventListener("turbolinks:load", function(){
-  if(!document.querySelector('.address_js_active')) return;
+  if(!document.querySelector('.handy-location-inputs')) return;
 
   var countryInput = document.getElementById("country-input");
   var countryDropdown = document.querySelector('.country-dropdown');
@@ -13,7 +13,7 @@ document.addEventListener("turbolinks:load", function(){
   var cityDropdown = document.querySelector('.city-dropdown');
   var cityDropdownContent = document.querySelector('.city-dropdown-content')
 
-  class DropdownController {
+  class InputController {
     constructor(type, input, dropdown, dropdownContent) {
       this.type = type;
       this.input = input;
@@ -67,8 +67,8 @@ document.addEventListener("turbolinks:load", function(){
     }
 
     superiorController() {
-      if(this.type === 'states') return countryDropdownController;
-      if(this.type === 'cities') return stateDropdownController;
+      if(this.type === 'states') return countryInputController;
+      if(this.type === 'cities') return stateInputController;
     }
 
     clearSubordinateInputs() {
@@ -101,7 +101,7 @@ document.addEventListener("turbolinks:load", function(){
         data = `country=${this.inputWithProperCase()}`;
       } else if(this.type === 'states') {
         url = "/HandyLocationInputs/cities.json";
-        data = `country=${countryDropdownController.inputWithProperCase()}&state=${this.inputWithProperCase()}`
+        data = `country=${countryInputController.inputWithProperCase()}&state=${this.inputWithProperCase()}`
       }
       Rails.ajax({
         dataType: "json",
@@ -174,7 +174,7 @@ document.addEventListener("turbolinks:load", function(){
     }
   }
 
-  countryDropdownController = new DropdownController('countries', countryInput, countryDropdown, countryDropdownContent)
-  stateDropdownController = new DropdownController('states', stateInput, stateDropdown, stateDropdownContent)
-  cityDropdownController = new DropdownController('cities', cityInput, cityDropdown, cityDropdownContent)
+  countryInputController = new InputController('countries', countryInput, countryDropdown, countryDropdownContent)
+  stateInputController = new InputController('states', stateInput, stateDropdown, stateDropdownContent)
+  cityInputController = new InputController('cities', cityInput, cityDropdown, cityDropdownContent)
 });
