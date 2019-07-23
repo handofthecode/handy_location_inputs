@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
   spec.authors     = ["handofthecode"]
   spec.email       = ["deartovi@gmail.com"]
   spec.homepage    = "https://github.com/handofthecode/handy_location_inputs"
-  spec.summary     = "HandyLocationInputs auto suggests locations as the user types. It prevents them from continuing until a valid location is selected. Subordinate input possibilities are requested from the server via ajax as soon as approved locations are entered. Cases are fixed."
-  spec.description = "HandyLocationInputs is an easy way to get uniform location input from a user without the UX compromise of select boxes."
+  spec.summary     = "Handy Location Inputs auto suggests locations as the user types. It prevents them from continuing until a valid location is selected. Subordinate input possibilities are requested from the server via ajax as soon as approved locations are entered. Cases are fixed."
+  spec.description = "Handy Location Inputs is an easy way to get uniform location input from a user without the UX compromise of select boxes."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", "~> 5.2.3"
+  spec.add_dependency "gon"
+  spec.add_dependency "city-state"
 
-  # spec.add_development_dependency "sqlite3"
 end

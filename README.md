@@ -1,5 +1,5 @@
-# HandyLocationInputs
-HandyLocationInputs is a rails gem/engine for adding powerful location inputs to your forms. It allows you to guarentee your Country, State, and City names will be uniform without the UX penalties of Select Boxes.
+# Handy Location Inputs
+Handy Location Inputs is a rails gem/engine for adding powerful location inputs to your forms. It allows you to guarentee your Country, State, and City names will be uniform without the UX penalties of Select Boxes.
 
 ## Requirements
 Rails with turbolinks and bulma css. (Future versions will remove the dependency on Bulma.)
@@ -28,6 +28,8 @@ First, add this line to your app/assets/javascripts/application.js manifest file
 ```javascript
 // = require handy_location_inputs/input_controllers
 ```
+
+Add Gon to your Gemfile ```gem "gon"``` and add ```<%= include_gon %>``` to the head tag of your application.
 
 To use handy_location_inputs in a view, ```include HandyLocationInputs::Locatable``` to that view's controller.
 
